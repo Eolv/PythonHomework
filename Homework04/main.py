@@ -11,14 +11,27 @@ import random
 
 #Задача 22
 #arr_1 = set(random.randint(1,10) for x in range(20))
-arr_1 = set(int(a) for a in input().split())
+arr_1 = set(int(a) for a in input('Input array 1: ').split())
 
 #arr_2 = set(random.randint(1,15) for x in range(15))
-arr_2 = set(int(a) for a in input().split())
+arr_2 = set(int(a) for a in input('Input array 2: ').split())
 
 arr_3 = list(arr_1.intersection(arr_2))
 arr_3.sort()
 
 print(f"Array 1 unique elements: {arr_1}")
 print(f"Array 2 unique elements: {arr_2}")
-print(f"Ascending intersection: {arr_3}")
+print(f"Ascending intersection: {arr_3}\n")
+
+#Задача 24
+N = int(input('Input N: '))
+bushes = [random.randint(1,100) for a in range(N)]
+bushes.insert(0, bushes[-1])
+bushes.append(bushes[1])
+print(bushes)
+max = 0
+for i in range(1, N+1):
+    if (bushes[i-1]+bushes[i]+bushes[i+1]) > max:
+        max = bushes[i-1]+bushes[i]+bushes[i+1]
+print('Max berries to be collected: ', max)
+    
