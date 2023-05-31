@@ -26,11 +26,10 @@ print(f"Ascending intersection: {arr_3}\n")
 #Задача 24
 N = int(input('Input N: '))
 bushes = [random.randint(1,100) for a in range(N)]
-bushes.insert(0, bushes[-1])
-bushes.append(bushes[1])
+bushes.append(bushes[0])
 print(bushes)
 max = 0
-for i in range(1, N+1):
+for i in range(1, N):
     if (bushes[i-1]+bushes[i]+bushes[i+1]) > max:
         max = bushes[i-1]+bushes[i]+bushes[i+1]
 print('Max berries to be collected: ', max)
