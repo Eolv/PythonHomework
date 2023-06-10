@@ -10,7 +10,7 @@ import random
 a1 = int(input('Input a1: '))
 d = int(input('Input d: '))
 n = int(input('Input n: '))
-array = [a1 + (i - 1) * d  for i in range(1, n + 1)]
+array = [a1 + i * d  for i in range(n)]
 print(array, '\n')
 
 #Задача 32
@@ -20,7 +20,7 @@ n = int(input('Input n: '))
 valueInRange = []
 array = [random.randint(1,100) for a in range(n)]
 print(array)
-for i, value in enumerate(array):
-    if value >= min and value <= max:
+for i in range(len(array)):
+    if  min <= array[i] <= max:
         valueInRange.append(i)
 print(valueInRange)
